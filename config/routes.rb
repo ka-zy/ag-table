@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'addresses/index'
+  # get 'addresses/index'
   root to: "addresses#index"
-  resources :addresses, only: [:index]
+  # resources :addresses, param: :code
+  resources :users, only: :index, param: :code
 end

@@ -8,7 +8,8 @@
   <%# <% end %> 
   <%# </div> %> 
   <div class="name">
-  <% @user.each do |user| %>
+＜氏名＞
+  <% @users.each do |user| %>
    <ul>
     <li>
      <%= user.last_name + user.first_name %>
@@ -17,7 +18,8 @@
   <% end %>
   </div>
   <div class="kana" >
-  <% @user.each do |user| %>
+  ＜カナ氏名＞
+  <% @users.each do |user| %>
    <ul>
     <li>
      <%= user.kana %>
@@ -26,7 +28,8 @@
   <% end %>
   </div> 
   <div class="num">
-  <% @user.each do |user| %>
+  ＜社員番号＞
+  <% @users.each do |user| %>
    <ul>
     <li>
      <%= user.num %>
@@ -35,7 +38,8 @@
   <% end %>
   </div>
   <div class="position">
-  <% @user.each do |user| %>
+  ＜役職＞
+  <% @users.each do |user| %>
    <ul>
     <li>
      <%= user.position %>
@@ -44,9 +48,10 @@
   <% end %>
   </div>
   <div class="extension">
+  ＜内線番号＞
    <ul>
     <li>
-     ＜内線番号＞
+     内線番号
     </li>
    </ul>
   </div>

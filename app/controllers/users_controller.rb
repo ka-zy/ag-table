@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def index
     
-    @user = User.all
+    # @user = User.all
     @addresses = Belong.all
     @addresses = Belong.all
     # @com = @addresses.select(:company).distinct
@@ -16,6 +16,7 @@ class UsersController < ApplicationController
     @unit = Belong.group(:company, :group, :depertment, :section, :unit).from(Belong.order(code: :asc), :belongs)
     @users = User.where(code: params[:com_code]).group(:num)
     @aaa = @unit.where(code: params[:com_code])
+    @user = User.all
     # @users = User.where(code: :add)
     # add = '11110'
   end

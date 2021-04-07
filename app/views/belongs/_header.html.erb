@@ -1,0 +1,57 @@
+<div class="surch-box">
+ <div class="surch-window">
+  名前で検索ができます
+ </div>
+</div>
+
+<div class="sub-header">
+＜部署情報＞
+<div class="user">
+  <div class="name">
+  <% @aaa.each do |user| %>
+   <ul>
+    <li>
+     <%= user.company %>
+    </li>
+   </ul>
+  <%# <% end %> 
+  </div>
+  <div class="kana" >
+  <%# <% @aaa.each do |user| %> 
+   <ul>
+    <li>
+     <%= user.group %>
+    </li> 
+   </ul>
+  <%# <% end %> 
+  </div> 
+  <div class="num">
+  <%# <% @aaa.each do |user| %> 
+   <ul>
+    <li>
+     <%= user.depertment %>
+    </li>
+   </ul>
+  <%# <% end %> 
+  </div>
+  <div class="position">
+  <%# <% @aaa.each do |user| %> 
+   <ul>
+    <li>
+     <%= user.section %>
+    </li>
+   </ul>
+  <%# <% end %> 
+  </div>
+  <div class="extension">
+  <%# <% @aaa.each do |user| %> 
+   <ul>
+    <li>
+     <%= user.unit %>
+    </li>
+   </ul>
+  <%# <% end %> 
+  </div>
+ <% end %> 
+</div>
+</div>

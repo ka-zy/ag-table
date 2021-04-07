@@ -10,9 +10,9 @@
   <div class="name">
 ＜氏名＞
   <% @users.each do |user| %>
-   <ul>
+  <ul>
     <li>
-     <%= user.last_name + user.first_name %>
+       <%= link_to user.last_name + user.first_name, controller: "belongs", action: "index", com_code: user.code, user_id: user.id %>
     </li>
    </ul>
   <% end %>

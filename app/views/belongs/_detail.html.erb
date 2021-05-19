@@ -1,4 +1,4 @@
-<div class="detail">
+<%# <div class="detail"> %>
 
  <div class="num">
  <% @user.each do |user| %>
@@ -25,7 +25,23 @@
  <% end %>
  </div>
  <div class="extension">
- 　内線番号：　
-  内線番号
+  　内線番号:　　
+  <% @naisen_num.each do |ex|%>
+
+  <%= ex.naisen %>
+ <% end %>
  </div>
+ <%# <%= form_with model: [@bbb, @naisen], class: 'form', local: true do |f| %>
+ <%# <div class="extension"> %>
+ <%# 　内線番号：　 %>
+    <%# <%= f.text_field :naisen, class: 'form-message', placeholder: 'type a message' %> 
+  <%# </div> %> 
+
+ <div class="button">
+ <% @user.each do |user| %>
+<%= link_to '　　編集　　', user_naisens_path(com_code: user.code, user_id: user.id) %>
+<% end %>
 </div>
+<%# </div> %>
+
+

@@ -2,6 +2,6 @@ class User < ApplicationRecord
   # def to_param
   #   code
   # end
-
-  belongs_to :belong
+  has_many :naisens
+  # belongs_to :belong
 end

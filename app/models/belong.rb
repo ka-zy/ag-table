@@ -1,3 +1,3 @@
 class Belong < ApplicationRecord
-  has_many :user
+  # has_many :user
 end

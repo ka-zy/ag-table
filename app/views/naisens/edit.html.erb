@@ -1,0 +1,30 @@
+<div class="edit">
+＜編集画面＞
+<% @u.each do |u| %>
+<div class="num">
+ <%= u.num %>
+</div>
+<div class="name">
+ <%= u.last_name + u.first_name %>
+</div>
+<div class="kana">
+ <%= u.kana %>
+</div>
+<div class="position">
+ <%= u.position%>
+</div>
+<div class="code">
+ <%= u.code %>
+</div>
+<div class="button1">
+ <%= link_to "更新", edit_belong_path(u.num)%>
+</div>
+
+<div class="button">
+<%= link_to :back do%>
+    　　戻る　　
+<% end %>
+</div>
+
+<% end %>
+</div>

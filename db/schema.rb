@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_14_070413) do
+ActiveRecord::Schema.define(version: 2021_04_28_071030) do
 
   create_table "belongs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -23,15 +23,31 @@ ActiveRecord::Schema.define(version: 2021_03_14_070413) do
     t.integer "code", null: false
   end
 
+  create_table "naisens", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "naisen"
+    t.bigint "user_id"
+    t.integer "code"
+    t.index ["user_id"], name: "index_naisens_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "company", null: false
+    t.string "group"
+    t.string "depertment"
+    t.string "section"
+    t.string "unit"
+    t.integer "code", null: false
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.string "kana", null: false
     t.string "position", null: false
     t.integer "num", null: false
-    t.integer "code", null: false
+    t.index ["code"], name: "index_users_on_code"
   end
 
+  add_foreign_key "naisens", "users"
 end

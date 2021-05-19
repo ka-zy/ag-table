@@ -1,0 +1,45 @@
+<%# <div class="detail"> %>
+
+ <div class="num">
+ <% @user.each do |user| %>
+ 　社員番号：　
+  <%= user.num %>
+ <% end %>
+ </div>
+ <div class="name">
+ <% @user.each do |user|%>
+ 　　　氏名：　
+  <%= user.last_name + user.first_name %>
+ <% end %>
+ </div>
+ <div class="kana">
+ <% @user.each do |user| %>
+ 　カナ氏名：　
+  <%= user.kana %>
+ <% end %>
+ </div>
+ <div class="position">
+ <% @user.each do |user| %>
+ 　　　役職：　
+  <%= user.position %>
+ <% end %>
+ </div>
+<%= form_with model: [@id, @naisen, @code], class: 'form', local: true do |f| %>
+ <div class="extension">
+ 　内線番号：　
+    <%= hidden_field_tag :code, @code.code %>
+    <%= f.text_field :naisen, class: 'form-message', code: "code" %>
+ </div> 
+ <%= f.submit '登録', class: 'form-submit', data: {confirm: "本当に登録して良いですか？", cancel: "やめる", commit: "更新する"}, title: "更新確認" %> 
+<% end %>
+
+
+ <div class="button">
+ <% @user.each do |user| %>
+<%= link_to '　　更新　　', users_path(com_code: user.code, user_id: user.id), data: {confirm: "本当に更新して良いですか？", cancel: "やめる", commit: "更新する"}, title: "更新確認" %>
+<% end %>
+</div>
+<%# </div> %>
+
+
+<%# , placeholder: @naisen.naisen %>

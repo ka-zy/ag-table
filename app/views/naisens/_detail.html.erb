@@ -24,11 +24,11 @@
   <%= user.position %>
  <% end %>
  </div>
-<%= form_with model: [@id, @naisen, @code], class: 'form', local: true do |f| %>
+<%= form_with model: [@id, @naisen], class: 'form', local: true do |f| %>
  <div class="extension">
  　内線番号：　
-    <%= hidden_field_tag :code, @code.code %>
-    <%= f.text_field :naisen, class: 'form-message', code: "code" %>
+    <%# <%= hidden_field_tag :code, @code.code %> 
+    <%= f.text_field :naisen, class: 'form-message'%>
  </div> 
  <%= f.submit '登録', class: 'form-submit', data: {confirm: "本当に登録して良いですか？", cancel: "やめる", commit: "更新する"}, title: "更新確認" %> 
 <% end %>

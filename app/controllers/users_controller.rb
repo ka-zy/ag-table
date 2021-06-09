@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     @users = User.where(code: params[:com_code]).group(:num)
     @aaa = User.where(code: params[:com_code]).group(:company, :group, :depertment, :section, :unit).from(Belong.order(code: :asc), :users)
     @user = User.all
-    @naisen_num = Naisen.where(user_id: params[:user_id])
+    @ex = Naisen.group(:user_id, :naisen)
   end
 
   private

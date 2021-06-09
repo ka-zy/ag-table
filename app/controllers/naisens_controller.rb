@@ -18,9 +18,11 @@ class NaisensController < ApplicationController
 
   def create
     @id = User.find(params[:user_id])
-    @code = User.find_by(params[:code])
+    # @code = User.find(params[:code])
     @naisen = @id.naisens.new(naisen_params)
+    # @n = @code.naisen.new(naisen_params)
     @naisen.save
+    # @n.save
   end
 
   def update
